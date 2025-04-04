@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi voluptate, temporibus cumque recusandae neque voluptates tempora placeat corporis! Quam quia facere in quisquam voluptate sint aliquid doloremque itaque mollitia impedit.</p>
+    {% if periodicos %}
+    <div style='
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;'>
+        {% for periodico in periodicos %}
+        <div class="card" style="width: 14rem;">
+            <img class="card-img-top" src='{{periodico.logo}}' alt="{{periodico.nombre}}">
+            <div class="card-body">
+              <h5 class="card-title">{{periodico.nombre}}</h5>
+              <a href="#" class="btn btn-primary">Agregar</a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}
